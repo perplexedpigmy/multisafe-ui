@@ -52,7 +52,7 @@ const Brand = () => {
                 fontSize: '1.3rem',
                 fontWeight: 600,
                 color: theme.palette.mode === 'light' ? grey[900] : grey[50],
-            }}>MultiSafe</Box>
+            }}>ALEXTEST MultiSafe</Box>
             </Box>
         </Box>
     );

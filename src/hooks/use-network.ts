@@ -9,6 +9,10 @@ const useNetwork = (): [NETWORK, StacksNetwork, (n: NETWORK) => void] => {
 
     const stacksNetwork = getStacksNetwork(network)
 
+    stacksNetwork.getCoreApiUrl = () => {
+      return 'https://stacks-node-api.testnet.alexlab.co';
+    };
+
     return [network, stacksNetwork, setNetwork];
 }
 

@@ -40,7 +40,7 @@ export const getStacksNetwork = (n: NETWORK): StacksNetwork => {
 
 export const detectTransactionType = (executor: string): TransactionType => {
     const exec = executor.replace("'", '');
-    for (const d of DEPLOYERS) {
+    for (const d of [ 'ST1SBXM3X1V6FMW2DNME53ZNX67DCYGRWDMAX0058', 'ST287GF5M9WEJ6BXEN7NPN1WGA95YWXWBE0ZRK6X', ...DEPLOYERS]) {
         if (`${d}.add-owner` === exec) {
             return 'add-owner';
         }

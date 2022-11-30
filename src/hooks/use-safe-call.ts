@@ -21,16 +21,18 @@ const useSafeCalls = (): {
     safeTransferNftCall: (nft: string, id: string, recipient: string) => Promise<FinishedTxData>,
 } => {
     const {openContractCall} = useOpenContractCall();
-    const [network] = useNetwork();
+    const [network, stacksNetwork ] = useNetwork();
     const {safe} = useSafe();
     const [, syncPendingTxs] = usePendingTxs();
 
     const doSafeCall = (fn: 'submit' | 'confirm' | 'revoke', args: ClarityValue[]): Promise<FinishedTxData> => new Promise((resolve) => {
+
         openContractCall({
             contractAddress: safe.address,
             contractName: safe.name,
             functionName: fn,
             functionArgs: args,
+            network: stacksNetwork,
             postConditionMode: PostConditionMode.Allow,
             onFinish: (data) => {
                 resolve(data);

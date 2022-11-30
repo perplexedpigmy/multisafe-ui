@@ -21,5 +21,5 @@ export const validateSafeAbi = (abi: ClarityAbi) => {
 }
 
 export const makeTxUrl = (txId: string, network: NETWORK) => {
-    return `https://explorer.stacks.co/txid/${txId}?chain=${network}`;
+    return `https://explorer.testnet.alexlab.co/txid/${txId}?chain=${network}`;
 }
